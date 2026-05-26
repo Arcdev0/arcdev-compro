@@ -506,6 +506,10 @@ function SpaceBackground() {
   );
 }
 
+function optimizedImageSrc(src) {
+  return src.replace(/\.(png|jpe?g)$/i, ".webp");
+}
+
 function Header({ locale, onHome, onLocaleChange, onNavigate, t }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
@@ -518,7 +522,7 @@ function Header({ locale, onHome, onLocaleChange, onNavigate, t }) {
         onClick={onHome}
         aria-label="ArcDev home"
       >
-        <img src={mark} alt="" />
+        <img src={mark} alt="" decoding="async" />
         <span>ArcDev</span>
       </button>
 
@@ -592,8 +596,10 @@ function SpacePreview({ project, index = 0 }) {
         {image ? (
           <img
             className="preview-image"
-            src={image[0]}
+            src={optimizedImageSrc(image[0])}
             alt={`${project.title} ${image[1]}`}
+            loading="lazy"
+            decoding="async"
           />
         ) : (
           <>
@@ -642,7 +648,7 @@ function HomePage({ onProjectOpen, t, locale }) {
             <div className="saturn-glow" />
             <div className="saturn-core">
               <div className="saturn-lockup">
-                <img src={mark} alt="" />
+                <img src={mark} alt="" decoding="async" />
                 <span>ArcDev</span>
               </div>
             </div>

@@ -1,9 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
-
 :root {
   color-scheme: dark;
   font-family:
-    "DM Sans",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -85,7 +82,7 @@ figure {
 h1,
 h2,
 h3 {
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   letter-spacing: 0;
 }
@@ -537,7 +534,7 @@ footer {
   gap: 11px;
   padding: 0;
   color: var(--ink);
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
 }
 
@@ -753,7 +750,7 @@ footer {
 .saturn-lockup span {
   color: #fff;
   font-size: 1.7rem;
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
   line-height: 1;
 }
@@ -842,6 +839,15 @@ footer {
   padding: 110px 0;
 }
 
+.about-section,
+.problem-section,
+.services-section,
+.projects-section,
+.contact-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 .section-intro {
   display: grid;
   gap: 16px;
@@ -927,7 +933,7 @@ footer {
   position: absolute;
   right: 14px;
   bottom: -10px;
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 8rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.045);
@@ -1070,7 +1076,7 @@ footer {
   position: absolute;
   right: 14px;
   bottom: -10px;
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 8rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.045);
@@ -1482,7 +1488,7 @@ footer {
 footer span {
   color: var(--ink);
   font-size: 1.1rem;
-  font-family: "Outfit", system-ui, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
 }
 
@@ -1582,6 +1588,35 @@ footer small {
 }
 
 @media (max-width: 780px) {
+  body::before {
+    opacity: 0.55;
+  }
+
+  .meteor,
+  .star-layer-two {
+    display: none;
+  }
+
+  .nebula {
+    filter: blur(28px);
+    opacity: 0.22;
+    animation-duration: 28s;
+  }
+
+  .space-background span {
+    animation-duration: 7s;
+  }
+
+  .site-header,
+  .saturn-lockup,
+  .preview-screen {
+    backdrop-filter: none;
+  }
+
+  .saturn-glow {
+    filter: blur(8px);
+  }
+
   .site-header {
     top: 10px;
     width: min(var(--max), calc(100% - 28px));
